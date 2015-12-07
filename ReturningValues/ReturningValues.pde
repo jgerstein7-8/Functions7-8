@@ -1,12 +1,17 @@
 float angle = 0;
+float x;
 
 void setup() {
   size(1600, 1200);
+  strokeWeight(3);
 }
 
 void draw() {
-  float y = height/2 + sin(angle)*200;
-  println(sin(angle));
-  angle += radians(5);
-  ellipse(width/2, y, 100, 100);
+  angle = 0;
+  background(255);
+  for (int x = 0; x < width; x+=10) {  //go through each value of x
+    float y = map(sin(angle), -1, 1, height*.1, height*.9);
+    line(x, height/2, x, y);
+    angle += radians(2)     ;
+  }
 }
