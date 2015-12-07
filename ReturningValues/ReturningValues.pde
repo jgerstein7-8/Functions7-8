@@ -1,12 +1,12 @@
+float angle = 0;
+
 void setup() {
+  size(1600, 1200);
 }
 
 void draw() {
-  println("The answer to life, the universe, and everything is " + theAnswer());
-  ellipse(mouseX, mouseY, theAnswer(), theAnswer());
-}
-
-
-int theAnswer() {
-  return 42;
+  float y = height/2 + sin(angle)*200;
+  println(sin(angle));
+  angle += radians(5);
+  ellipse(width/2, y, 100, 100);
 }
